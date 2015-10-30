@@ -6,6 +6,15 @@
  * http://www.eclipse.org/legal/epl-v10.html
  * 
  * Any modifications to this file must keep this entire header intact.
+ * 
+ * Change History - most recent changes go on top of previous changes
+ *
+ * AnimatedGIFWriter.java
+ *
+ * Who   Date       Description
+ * ====  =========  =================================================
+ * WY    29Oct2015  Added parameters check for GIFFrame constructor
+ * WY    27Oct2015  Initial creation
  */
 
 package com.github.dragon66;
@@ -838,6 +847,9 @@ public class AnimatedGIFWriter {
     			throw new IllegalArgumentException("Invalid user input flag: " + userInputFlag);
     		if(transparencyFlag < TRANSPARENCY_INDEX_NONE || transparencyFlag > TRANSPARENCY_INDEX_SET)
     			throw new IllegalArgumentException("Invalid transparency flag: " + transparencyFlag);
+    		if(leftPosition < 0 || topPosition < 0)
+    			throw new IllegalArgumentException("Negative coordinates for frame top-left position");
+    		if(delay < 0) delay = 0;
     		this.frame = frame;
     		this.leftPosition = leftPosition;
     		this.topPosition = topPosition;	
