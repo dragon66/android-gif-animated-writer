@@ -21,7 +21,7 @@ If used as normal GIF writer:
 ```java
 // True for dither. Will need more memory and CPU
 AnimatedGIFWriter writer = new AnimatedGIFWriter(true);
-OutputStream os = new FileOutputStream("animated.gif");
+OutputStream os = new FileOutputStream("output.gif");
 Bitmap bitmap; // Grab the Bitmap whatever way you can
 writer.writeFrame(bitmap, os);
 // And you are done!!!
