@@ -1,7 +1,7 @@
 # AnimatedGIFWriter
 Standalone Android animated GIF writer.
 
-How to use
+How to use:
 
 ```java
 // True for dither. Will need more memory and CPU
@@ -23,6 +23,6 @@ If used as normal GIF writer:
 AnimatedGIFWriter writer = new AnimatedGIFWriter(true);
 OutputStream os = new FileOutputStream("output.gif");
 Bitmap bitmap; // Grab the Bitmap whatever way you can
-writer.writeFrame(bitmap, os);
+writer.write(bitmap, os);
 // And you are done!!!
 ```
